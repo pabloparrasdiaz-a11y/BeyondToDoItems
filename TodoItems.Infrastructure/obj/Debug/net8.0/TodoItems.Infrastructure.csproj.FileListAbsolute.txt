@@ -1,0 +1,12 @@
+D:\PruebasTecnicas\beyond\TodoItems.Infrastructure\bin\Debug\net8.0\TodoItems.Infrastructure.deps.json
+D:\PruebasTecnicas\beyond\TodoItems.Infrastructure\bin\Debug\net8.0\TodoItems.Infrastructure.dll
+D:\PruebasTecnicas\beyond\TodoItems.Infrastructure\bin\Debug\net8.0\TodoItems.Infrastructure.pdb
+D:\PruebasTecnicas\beyond\TodoItems.Infrastructure\obj\Debug\net8.0\TodoItems.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\PruebasTecnicas\beyond\TodoItems.Infrastructure\obj\Debug\net8.0\TodoItems.Infrastructure.AssemblyInfoInputs.cache
+D:\PruebasTecnicas\beyond\TodoItems.Infrastructure\obj\Debug\net8.0\TodoItems.Infrastructure.AssemblyInfo.cs
+D:\PruebasTecnicas\beyond\TodoItems.Infrastructure\obj\Debug\net8.0\TodoItems.Infrastructure.csproj.CoreCompileInputs.cache
+D:\PruebasTecnicas\beyond\TodoItems.Infrastructure\obj\Debug\net8.0\TodoItems.Infrastructure.sourcelink.json
+D:\PruebasTecnicas\beyond\TodoItems.Infrastructure\obj\Debug\net8.0\TodoItems.Infrastructure.dll
+D:\PruebasTecnicas\beyond\TodoItems.Infrastructure\obj\Debug\net8.0\refint\TodoItems.Infrastructure.dll
+D:\PruebasTecnicas\beyond\TodoItems.Infrastructure\obj\Debug\net8.0\TodoItems.Infrastructure.pdb
+D:\PruebasTecnicas\beyond\TodoItems.Infrastructure\obj\Debug\net8.0\ref\TodoItems.Infrastructure.dll

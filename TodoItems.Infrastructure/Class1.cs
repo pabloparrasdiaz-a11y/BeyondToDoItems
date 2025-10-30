@@ -1,4 +1,4 @@
-﻿namespace TodoItems.Domain
+﻿namespace TodoItems.Infrastructure
 {
     public class Class1
     {

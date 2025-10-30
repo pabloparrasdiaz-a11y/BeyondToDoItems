@@ -1,0 +1,12 @@
+D:\PruebasTecnicas\beyond\TodoItems.Application\bin\Debug\net8.0\TodoItems.Application.deps.json
+D:\PruebasTecnicas\beyond\TodoItems.Application\bin\Debug\net8.0\TodoItems.Application.dll
+D:\PruebasTecnicas\beyond\TodoItems.Application\bin\Debug\net8.0\TodoItems.Application.pdb
+D:\PruebasTecnicas\beyond\TodoItems.Application\obj\Debug\net8.0\TodoItems.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\PruebasTecnicas\beyond\TodoItems.Application\obj\Debug\net8.0\TodoItems.Application.AssemblyInfoInputs.cache
+D:\PruebasTecnicas\beyond\TodoItems.Application\obj\Debug\net8.0\TodoItems.Application.AssemblyInfo.cs
+D:\PruebasTecnicas\beyond\TodoItems.Application\obj\Debug\net8.0\TodoItems.Application.csproj.CoreCompileInputs.cache
+D:\PruebasTecnicas\beyond\TodoItems.Application\obj\Debug\net8.0\TodoItems.Application.sourcelink.json
+D:\PruebasTecnicas\beyond\TodoItems.Application\obj\Debug\net8.0\TodoItems.Application.dll
+D:\PruebasTecnicas\beyond\TodoItems.Application\obj\Debug\net8.0\refint\TodoItems.Application.dll
+D:\PruebasTecnicas\beyond\TodoItems.Application\obj\Debug\net8.0\TodoItems.Application.pdb
+D:\PruebasTecnicas\beyond\TodoItems.Application\obj\Debug\net8.0\ref\TodoItems.Application.dll
