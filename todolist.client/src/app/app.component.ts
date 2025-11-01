@@ -2,17 +2,18 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 interface TodoItem {
-  Id: number;
-  Title: string;
-  Description: string;
-  Progressions: [];
-  IsCompleted: boolean;
-  PercentTotal: number;
+  id: number;
+  title: string;
+  description: string;
+  category: string;
+  progressions: Progression[];
+  isCompleted: boolean;
+  totalPercent: number;
 }
 
 interface Progression {
-  Date: Date;
-  Percent: number;
+  date: Date;
+  percent: number;
 }
 
 @Component({
@@ -22,18 +23,19 @@ interface Progression {
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
-  public forecasts: TodoItem[] = [];
+  public todoItems: TodoItem[] = [];
+  Math = Math;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.getForecasts();
+    this.getTotoItems();
   }
 
-  getForecasts() {
+  getTotoItems() {
     this.http.get<TodoItem[]>('/api/TodoList').subscribe(
       (result) => {
-        this.forecasts = result;
+        this.todoItems = result;
       },
       (error) => {
         console.error(error);

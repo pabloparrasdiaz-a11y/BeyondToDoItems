@@ -23,6 +23,7 @@ namespace TodoList.Domain.Core
             else if (!_categories.Any(c => c == category))
                 throw new Exception("La categoría no existe");
 
+            Id = index;
             Title = title;
             Description = description;
             Category = category;

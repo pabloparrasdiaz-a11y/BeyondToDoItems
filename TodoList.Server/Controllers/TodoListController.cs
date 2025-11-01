@@ -18,8 +18,8 @@ namespace TodoList.Server.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<TodoItem>> Get()
         {
-            var a = _todoList.PrintItems();
-            return Ok("Ha llegado");
+            var result = _todoList.PrintItems();
+            return Ok(result);
         }
 
 

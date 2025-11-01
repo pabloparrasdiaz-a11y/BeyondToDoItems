@@ -18,7 +18,8 @@ namespace TodoList.Application.Impl
 
         public List<TodoItem> PrintItems()
         {
-            throw new NotImplementedException();
+            var items = _todoListRepository.PrintItems();
+            return items;
         }
 
         public void RegisterProgression(int id, DateTime dateTime, decimal percent)

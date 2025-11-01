@@ -1,22 +1,24 @@
-<h1 id="tableLabel">Weather forecast</h1>
+<h1 id="tableLabel">Lista de tareas</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
 
-<p *ngIf="!forecasts"><em>Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationangular">https://aka.ms/jspsintegrationangular</a> for more details.</em></p>
+<div *ngIf="todoItems">
+  <div *ngFor="let todo of todoItems" class="todo-item">
+    <h3>
+      ({{ todo.id }}) {{ todo.title }} - {{ todo.description }}
+      <span *ngIf="todo.category">({{ todo.category }})</span>
+      Completed: {{ todo.isCompleted ? 'True' : 'False' }}
+    </h3>
 
-<table *ngIf="forecasts">
-    <thead>
-        <tr>
-            <th>Date</th>
-            <th>Temp. (C)</th>
-            <th>Temp. (F)</th>
-            <th>Summary</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let forecast of forecasts">
-            <td>{{ forecast.Id }}</td>
-            <td>{{ forecast.Title }}</td>
-        </tr>
-    </tbody>
-</table>
+    <div *ngIf="todo.progressions && todo.progressions.length > 0" class="progressions">
+      <div *ngFor="let prog of todo.progressions" class="progression">
+        <div>
+          {{ prog.date | date: 'MM/dd/yyyy' }} - {{ prog.percent }}% |{{ 'O'.repeat(Math.floor(prog.percent / 2)) }}|
+        </div>
+
+      </div>
+    </div>
+
+    <hr />
+  </div>
+</div>
+

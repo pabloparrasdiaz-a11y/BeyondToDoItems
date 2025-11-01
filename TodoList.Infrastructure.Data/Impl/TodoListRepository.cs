@@ -7,21 +7,34 @@ namespace TodoList.Infrastructure.Data.Impl
     public class TodoListRepository : ITodoListRepository
     {
         private readonly IMemoryCache _cache;
-        private const string CacheKey = "TodoList";
+        private const string CacheKeyTodoItem = "TodoItem";
+        private const string CacheKeyprogression = "Progression";
 
         public TodoListRepository(IMemoryCache cache)
         {
             _cache = cache;
 
-            if (!_cache.TryGetValue(CacheKey, out List<TodoItem>? elements))
+            if (!_cache.TryGetValue(CacheKeyTodoItem, out List<TodoItem>? todoItems))
             {
-                elements = new List<TodoItem> {
+                todoItems = new List<TodoItem> {
                 new TodoItem(1, "Primer todoItem", "Primer primer todoItem", "Work"),
                 new TodoItem(2, "Segundo todoItem", "Descripción Segundo todoItem", "Work"),
                 new TodoItem(3, "Tercer todoItem", "Descripción Tercer todoItem", "Work"),
                 new TodoItem(4, "Cuarto todoItem", "Descripción Cuarto todoItem", "Work")
                 };
-                _cache.Set(CacheKey, elements);
+                _cache.Set(CacheKeyTodoItem, todoItems);
+            }
+
+            if (!_cache.TryGetValue(CacheKeyprogression, out List<Progression>? progressions))
+            {
+                progressions = new List<Progression> {
+                new Progression(1, new DateTime(2025,5,24), 25),
+                new Progression(1, new DateTime(2025,6,2), 65),
+                new Progression(1, new DateTime(2025,6,8), 100),
+                new Progression(2, new DateTime(2025,6,10), 15),
+                new Progression(2, new DateTime(2025,6,19), 40)
+                };
+                _cache.Set(CacheKeyprogression, progressions);
             }
         }
 
@@ -48,18 +61,25 @@ namespace TodoList.Infrastructure.Data.Impl
 
         public List<TodoItem> PrintItems()
         {
-            if (!_cache.TryGetValue(CacheKey, out List<TodoItem>? elements))
+            if (_cache.TryGetValue(CacheKeyTodoItem, out List<TodoItem>? elements))
             {
-                elements = new List<TodoItem> {
-                new TodoItem(1, "Primer todoItem", "Primer primer todoItem", "Work"),
-                new TodoItem(2, "Segundo todoItem", "Descripción Segundo todoItem", "Work"),
-                new TodoItem(3, "Tercer todoItem", "Descripción Tercer todoItem", "Work"),
-                new TodoItem(4, "Cuarto todoItem", "Descripción Cuarto todoItem", "Work")
-                };
-                _cache.Set(CacheKey, elements);
+                if (_cache.TryGetValue(CacheKeyprogression, out List<Progression>? progresions))
+                {
+                    var selectTodoItemsIds = progresions.Select(x => x.TodoItemId).Distinct();
+
+                    foreach (var todoItemId in selectTodoItemsIds)
+                    {
+                        var todoItem = elements.First(x => x.Id == todoItemId);
+
+                        todoItem.Progressions = progresions.Where(y => y.TodoItemId == todoItemId).ToList();
+                    }
+                }
+
+
+                return elements;
             }
 
-            return elements;
+            return new List<TodoItem>();
         }
 
         public void RegisterProgression(int id, DateTime dateTime, decimal percent)
