@@ -17,9 +17,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TodoList.Application\TodoList.Application.csproj" />
     <ProjectReference Include="..\todolist.client\todolist.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="..\TodoList.Infrastructure.Data\TodoList.Infrastructure.Data.csproj" />
   </ItemGroup>
 
 </Project>
