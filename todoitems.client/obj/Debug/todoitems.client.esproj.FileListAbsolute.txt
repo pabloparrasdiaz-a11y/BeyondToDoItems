@@ -1,1 +1,0 @@
-D:\PruebasTecnicas\beyond\todoitems.client\obj\Debug\todoitems.client.esproj.CoreCompileInputs.cache
