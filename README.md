@@ -7,6 +7,7 @@ Test exercise to Beyond
 	*Sin persistencia de datos, se trabajara en cache de memoria.
 	*Metodologia SOLID
 	*Clean code
+	*Testing XUNIT
 
 *Al crear una parte cliente y mostrar, se ha modificado la interface ITodoList para devolver valores (void)
 *He añadido el atributo "TodoItemId" a Progression para mejor consistencia
