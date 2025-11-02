@@ -29,3 +29,9 @@ public interface ITodoListRepository
 int GetNextId();
 List<string> GetAllCategories();
 }
+-El siguiente método no debería de contener el id de creación del item, tampoco tiene sentido
+void AddItem(int id, string title, string description, string category);
+
+-CRUD en controller
+-Testing
+	*Ejemplo con Mock, y de integracion, happy path y error
