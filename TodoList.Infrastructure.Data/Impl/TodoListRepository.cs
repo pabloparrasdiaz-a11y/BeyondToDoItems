@@ -41,19 +41,25 @@ namespace TodoList.Infrastructure.Data.Impl
         public void AddItem(int id, string title, string description, string category)
         {
             var todoList = PrintItems();
+
+            if (todoList.Any(x => x.Id == id))
+                throw new Exception("Id Duplicate");
+
             todoList.Add(new TodoItem(id, title, description, category));
         }
 
         public List<string> GetAllCategories()
         {
-            throw new NotImplementedException();
+            var todoList = PrintItems();
+            var categories = todoList.Select(x => x.Category).Distinct().ToList();
+            return categories;
         }
 
         public int GetNextId()
         {
             var todoList = PrintItems();
 
-            if(!todoList.Any())
+            if (!todoList.Any())
                 return 1;
 
             else return todoList.Max(x => x.Id) + 1;
@@ -75,14 +81,13 @@ namespace TodoList.Infrastructure.Data.Impl
                     }
                 }
 
-
                 return elements;
             }
 
             return new List<TodoItem>();
         }
 
-        public void RegisterProgression(int id, DateTime dateTime, decimal percent)
+        public void RegisterProgression(int id, DateTime date, decimal percent)
         {
             var todoList = PrintItems();
             var entity = todoList.FirstOrDefault(x => x.Id == id);
@@ -90,17 +95,25 @@ namespace TodoList.Infrastructure.Data.Impl
             if (entity == null)
                 throw new KeyNotFoundException("No existe");
 
-            entity.Progressions.Add(new Progression(id, dateTime, percent));
+            var percentTotal = entity.Progression(percent, date);
+            entity.Progressions.Add(new Progression(id, date, percentTotal));
         }
 
         public void RemoveItem(int id)
         {
-            throw new NotImplementedException();
+            var todoList = PrintItems();
+            var entity = todoList.First(x => x.Id == id);
+
+            if (entity.Remove())
+                todoList = todoList.Where(t => t.Id != id).ToList();
         }
 
         public void UpdateItem(int id, string description)
         {
-            throw new NotImplementedException();
+            var todoList = PrintItems();
+
+            var entity = todoList.First(x => x.Id == id);
+            entity.Description = description;
         }
     }
 }

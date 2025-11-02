@@ -13,7 +13,7 @@ namespace TodoList.Application.Impl
         }
         public void AddItem(int id, string title, string description, string category)
         {
-            throw new NotImplementedException();
+            _todoListRepository.AddItem(id, title, description, category);
         }
 
         public List<TodoItem> PrintItems()
@@ -22,19 +22,21 @@ namespace TodoList.Application.Impl
             return items;
         }
 
+        public void UpdateItem(int id, string description)
+        {
+            _todoListRepository.UpdateItem(id, description);
+        }
+
         public void RegisterProgression(int id, DateTime dateTime, decimal percent)
         {
-            throw new NotImplementedException();
+            _todoListRepository.RegisterProgression(id, dateTime, percent);
         }
 
         public void RemoveItem(int id)
         {
-            throw new NotImplementedException();
+            _todoListRepository.RemoveItem(id);
         }
 
-        public void UpdateItem(int id, string description)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }
