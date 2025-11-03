@@ -1,14 +1,10 @@
 ﻿
-using TodoList.Domain.Core;
+using TodoList.Domain.Interfaces.Repositories;
 
 namespace TodoList.Application.Interfaces
 {
-    public interface ITodoList
+    public interface ITodoList: ITodoListCore
     {
-        void AddItem(int id, string title, string description, string category);
-        void UpdateItem(int id, string description);
-        void RemoveItem(int id);
-        void RegisterProgression(int id, DateTime dateTime, decimal percent);
-        List<TodoItem> PrintItems();
+        
     }
 }
