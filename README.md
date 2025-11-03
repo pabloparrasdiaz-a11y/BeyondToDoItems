@@ -1,6 +1,9 @@
 # BeyondToDoItems
 Test exercise to Beyond
 
+-Informé a la consultora que en los 4 dias de las pruebas 2 estoy trabajando y este fin de semana era el cumpleaños de mi hija y no podia dedicarle tiempo,
+he podido dedicarle poco tiempo pero espero que sea de calidad.
+
 -Caracteristicas
 	*CLiente Angular, simple para mostrar las tareas y la progresión.
 	*Server .Net 8, arquitectura hexagonal, DDD.
